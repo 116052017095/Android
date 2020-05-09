@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">myintent</string>
+    <string name="textview">http://www.baidu.com</string>
+    <string name="button">search</string>
+</resources>
