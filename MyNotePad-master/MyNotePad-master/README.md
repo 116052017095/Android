@@ -23,7 +23,7 @@
 
 ### 代码解读
 
-代码思路是首先将noteslist_item的布局设置成线性布局，在text1底下增加新控件text2
+代码思路是首先将noteslist_item的布局设置成线性布局，在text1底下增加新控件time
 
 ```
 
