@@ -7,13 +7,15 @@
 
 ### 结果图
 
-<image src="">
+<image src="https://github.com/116052017095/Android/blob/master/期中实验截图/P1.png">
 
 ## 编辑笔记
 
-### 代码解读
+进入编辑界面，第一行输入为标题，后面为内容，编辑完成可以保存，编辑错误可以退回，还可以删除不想要的笔记
 
 ### 结果图
+
+<image src="https://github.com/116052017095/Android/blob/master/期中实验截图/P2.png">
 
 ## 时间戳
 
@@ -79,6 +81,8 @@ private static final String[] PROJECTION = new String[] {
 ```
 
 ### 结果图
+
+<image src="https://github.com/116052017095/Android/blob/master/期中实验截图/P3.png">
 
 ## 查询功能
 
@@ -150,3 +154,5 @@ private static final String[] PROJECTION = new String[] {
 ```
 
 ### 结果图
+
+<image src="https://github.com/116052017095/Android/blob/master/期中实验截图/P4.png">
