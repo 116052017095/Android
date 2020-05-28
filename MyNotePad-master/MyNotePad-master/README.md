@@ -80,6 +80,71 @@ private static final String[] PROJECTION = new String[] {
 
 ## 查询功能
 
+查询功能使用的是v7自动的搜索控件，不需要按钮输入就可查询，查询的是使用模糊搜索
+
 ### 代码解读
+
+首先将布局改成listview布局,增加了搜索栏
+
+```
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/searchview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.SearchView>
+
+    <ListView
+        android:id="@+id/searchviewtext"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
+
+
+```
+
+接着我弄了searchnote函数,调用searchview控件
+
+```
+
+ searchView=findViewById(R.id.searchview);
+ 
+ ```
+ 
+ 重写了onQueryTextChange，假如输入框的内容等于空就显示全部，否则显示与输入的内容有关的标题
+ 
+ ```
+ 
+  public boolean onQueryTextChange(String text) {
+                if(text.equals("")){
+
+                            updatecursor = getContentResolver().query(
+                                    getIntent().getData(),
+                                    PROJECTION,
+                                    null,
+                                    null,
+                                    NotePad.Notes.DEFAULT_SORT_ORDER
+                    );
+
+                }
+               else {
+                    updatecursor = getContentResolver().query(
+                            getIntent().getData(),
+                            PROJECTION,
+                            NotePad.Notes.COLUMN_NAME_TITLE+" GLOB '*"+text+"*'",
+                            null,
+                            NotePad.Notes.DEFAULT_SORT_ORDER
+                    );
+                }
+                
+```
 
 ### 结果图
